@@ -1,0 +1,36 @@
+weight = 41.5
+
+#Ground shipping
+if weight <= 2:
+  cost_ground = 20 + weight*1.50
+elif 2 < weight <= 6:
+  cost_ground = 20 + weight*3.00
+elif 6 < weight <= 10:
+  cost_ground = 20 + weight*4.00
+elif 10 < weight:
+  cost_ground = 20 + weight*4.75
+else:
+  print("Error!")
+
+#Ground shipping Premium
+cost_premium = 125.00
+
+#Drone shipping
+if weight <= 2:
+  cost_drone = weight*4.50
+elif 2 < weight <= 6:
+  cost_drone = weight*9.00
+elif 6 < weight <= 10:
+  cost_drone = weight*12.00
+elif 10 < weight:
+  cost_drone = weight*14.25
+else:
+  print("Error")
+
+#Compare three shipping ways
+if cost_ground < cost_premium and cost_ground < cost_drone:
+  print(f"Ground shipping is the cheapest and the cost is {cost_ground}." )
+elif cost_premium < cost_drone:
+  print(f"Ground shipping premium is the cheapest and the cost is {cost_premium}")
+else:
+  print(f"Drone shipping is the cheapest and the cost is {cost_drone}.")
